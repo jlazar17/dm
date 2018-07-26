@@ -1,0 +1,115 @@
+Changelog for changes with respect to version 1.0
+-------------------------------------------------
+
+General note:
+- For use with Athena (compilation on 64bit platform):
+  once ./configure  script is executed add in make.inc "-m32" to CFLAGS.
+  The make.inc is placed in the  main directory.
+
+2012.IV.30
+- Tauolapp namespace introduced
+- Communicate WARNING changed into WARNING from TAUOLA
+- checks of forward declarations cleaned
+- over all test on energy momentum conservation in a whole event added 
+  to examples.
+- checkMomentumConservation corrected to include energy as well
+- version no moved from 1.0.6 to 1.0.7  
+
+2011.XI.28
+- Added example of using interface without HepMC
+- Now interface can be compiled without HepMC by using:
+  ./configure --without-hepmc
+
+2011.XI.18
+- Fixed bug in scripts located in platform/LCGCONFIG directory.
+  It should have no effect on normal Tauola++ usage.
+  However, when Tauola++ libraries are compiled using LCG scripts,
+  some of the fortran routines used in user program may produce wrong results.
+
+2011.VIII.22
+- Several changes to documentation has been introduced, as requested by CPC Editor.
+- Header files are now under '$prefix/include/Tauola' directory,
+  changing include statements in all programs that use Tauola library.
+- Fixed names of the '--with' parameters in default configuration files.
+  Now all parameters are lower case.
+
+2011.VII.10
+- Bug in 'getZpolarization' where grandmother pdgid could become '-21' fixed.
+  Thanks to Julia Yarba for pointing out this bug and detailed feedback about
+  the cause.
+
+2011.IV.29
+- Method printing information on generated tau sample added Tauola::summary()
+
+2011.IV.28:
+- Fixed important kinematical mismatch in eta, k0 and pi0 decays.
+
+2011.IV.04:
+- work on release 1.0.4 completed
+- note that temporarily SVN Revision: 499 from March 21 was marked as 
+  release 1.0.4
+
+2011.III.31:
+- Fixed normalization for Plots for Fig3a and Fig4a
+- documentation fine tunig completed
+- Work on release 1.0.4 nearly completed, no changes to the code introduced.
+
+2011.III.16:
+- Added instalation scripts for LCG.
+
+2011.III.7:
+- Fixed problem with Tauola::setTaukle(...). Not working correctly.
+
+2011.III.2:
+- Fixed problem where calculation of mass of neutrino could result in NaN.
+  Thanks to Peter Rosendahl for pointing out this bug.
+
+2011.II.22:
+- Changed names of three routines:
+  Tauola::initialise -> Tauola::initialize
+  Tauola::setInitialisePhy -> Tauola::setInitializePhy
+  f_interface_tauolaInitialise -> f_interface_tauolaInitialize
+
+  Wrappers for old names of these routines had been introduced
+  for backward compatibility.
+
+2011.I.30:
+- updated documentation/readmes and makefiles for examples
+
+2011.I.28:
+- decayEndgame() is executed now when taus are boosted back to lab frame.
+  Thanks to Sho Iwamoto for pointing out previously present bug resulting in 
+ improper decay vertex position.
+
+- several modifications to internal part of the interface  introduced
+- unused files from 'examples' directory  moved to 'examples/attic'
+- Separate executable for  'examples/testing'  introduced. That is why
+   'examples/taumain_pythia_example.c' could be simplified.
+- plot class has been rewritten and it's usage is modified/simplified
+- added directory 'examples/testing/EW-PLOTS' for plots
+  using/testing tables generated in SANC module
+
+--
+2011.I.13:
+- several small bugs fixed thanks to feedback from Sho Iwamoto.
+
+2010.VI.30:
+- added routines to redefine tau decay channels on the flight
+- added 4th example - taummk_pythia_example.c
+- minor config modification (f77 + gcc34 and gfortran + gcc43 trick)
+
+2010.II.24:
+- functioning in case of cluster decaying into more than single tau-pair
+  improved, but spin correlations not under contro. Case like  
+  q bar q --> tau+ tau- nu_tau bar nu_tau g g gamma should be kept in mind.
+
+2010.II.20:
+- safety routines removed - bug in algorithm reducing multileg hard
+  processes to Born kinematics hopefully fixed.
+
+2010.II.13:
+- safety routines added to src/TauolaParticlePair.cxx.  Their role is to 
+  prevent segmentation
+  fault if offending event content is encountered in execution. 
+  Further work is expected. Input from program users
+  is of the great help.

@@ -1,0 +1,4 @@
+(suv_new) . components[0]+=suv2.components[0];
+(suv_new) . components[1]+=cos(2*t*suv1.components[3])*suv2.components[1] + sin(2*t*suv1.components[3])*suv2.components[2];
+(suv_new) . components[2]+=-(sin(2*t*suv1.components[3])*suv2.components[1]) + cos(2*t*suv1.components[3])*suv2.components[2];
+(suv_new) . components[3]+=suv2.components[3];

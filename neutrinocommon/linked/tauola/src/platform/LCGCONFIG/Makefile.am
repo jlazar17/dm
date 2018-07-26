@@ -1,0 +1,2 @@
+SUBDIRS = tauola-fortran src
+

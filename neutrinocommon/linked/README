@@ -1,0 +1,13 @@
+Author : C.A.Arguelles
+
+In this folder I have place copies of the following programs:
+
+- nusigma
+- hepmc
+- tauola
+
+NUSIGMA is needed for the differential cross sections. I have modified the make files in order to make it independend of DARKSUSY. Now NUSIGMA-MOD compiles as a stand alone.
+
+HEPMC and TAUOLA are needed for the taudecay which is a cython interface to TAUOLA.
+
+
